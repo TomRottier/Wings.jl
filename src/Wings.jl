@@ -71,8 +71,8 @@ trailing_edge(ξ, pl::AbstractPlanform) = quarter_chord(ξ, pl) + 0.75chord(ξ, 
 Generate a vector of points giving the x (chordwise) coordinate of each of `n` points on a given planform `pl`. Points start from wing root leading edge and proceed to wing tip leading edge, wing tip trailing edge and back to wing root trailing edge.
 """
 planform(pl::AbstractPlanform; n=100) = [
-    map(ξ -> leading_edge(ξ, pl), range(0, 1, length=n ÷ 2));
-    map(ξ -> trailing_edge(ξ, pl), range(1, 0, length=n ÷ 2))
+    map(ξ -> [leading_edge(ξ, pl), ξ, 0.0], range(0, 1, length=n ÷ 2));
+    map(ξ -> [trailing_edge(ξ, pl), ξ, 0.0], range(1, 0, length=n ÷ 2))
 ]
 
 """
