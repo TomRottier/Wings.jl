@@ -88,7 +88,7 @@ The wing, aerofoil, and planform can be easily visualised. For example using the
 
 The wing can be exported as either a list of points in a text file or as an STL:
 ```julia
-    write_pts("wing.txt", w; nchord=100, nspan=50, sf=100, delim=" ") # export to txt using space as delimiter
+    write_pts("wing.txt", w; nchord=100, nspan=50, delim=" ") # export to txt using space as delimiter
     write_stl("wing.stl", w; nchord=100, nspan=50, sf=100) # export stl 
 ```
 where the keyword argument `sf` defines the scale factor. To produce a wing with a 100mm span, set this argument to 100, this will scale each point by a factor of 100 (so e.g. now the wing tip is located at 100 units in the spanwise direction).
