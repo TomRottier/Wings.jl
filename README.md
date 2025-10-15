@@ -60,7 +60,7 @@ which is of course the same anywhere along the span for a rectangular planform.
 
 The whole wing is can then be created:
 ```julia
-    w = Wing(pl, af)
+    w = Wing(af, pl)
 ```
 to generate a vector of points on the surface of this wing:
 ```julia
@@ -134,7 +134,7 @@ The full wing can then be used just as before:
 ```julia
     af = YourAerofoil(aerofoil_data...)
     pl = YourPlanform(planform_data...)
-    w = Wing(pl, af)
+    w = Wing(af, pl)
 
     wing_pts = wing(w, 0.0, 1.0; nchord=100, nspan=50)
     write_stl("custom_wing.stl", w; nchord=50, nspan=20, sf=200)
