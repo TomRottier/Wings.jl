@@ -38,8 +38,8 @@ function naca00_aerofoil(ξ, xx; N=100)
 
     return [upper; lower]
 end
-aerofoil(ξ, p::NACA00XX; nchord=100) = naca00_aerofoil(ξ, p.t; N=nchord)
-aerofoil_pt(η, ξ, p::NACA00XX; upper) = naca00_aerofoil_pt(η, ξ, p.t; upper)
+aerofoil(ξ, p::NACA00XX; nchord=100) = naca00_aerofoil(ξ, p.xx; N=nchord)
+aerofoil_pt(η, ξ, p::NACA00XX; upper) = naca00_aerofoil_pt(η, ξ, p.xx; upper)
 
 """
     NACA4 <: AbstractAerofoil
